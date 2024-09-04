@@ -1,0 +1,46 @@
+
+<h1>Hours<small>Worked</small></h1>
+<hr>
+
+
+<div class="row ">
+    <div class="c text-align">
+        <button class="btn btn-danger"
+            routerLink="/home">
+            <i class="fa fa-arrow-left"></i>
+        Back
+        </button>
+    </div>
+</div>
+<br>
+<form (ngSubmit)="llenarPayDate()">
+    <div class="mb-4">
+        <label for="formGroupExampleInput" class="form-label">Date</label>
+        <input type="text" class="form-control" [(ngModel)]="date" name="date" id="date" placeholder="date">
+      </div>
+    <br>
+    <div class="mb-3">
+      <label for="formGroupExampleInput" class="form-label">Select Job</label>
+      <div class="col-8">
+            <select class="form-control"
+                    [(ngModel)]="idjob"
+                    name="idjob"
+                    ngModel
+                    required
+                    minlength="2">
+                <option *ngFor="let xdata of data"
+                        [value]="xdata.id">
+                      {{xdata.id}}
+                </option>
+            </select>
+      </div>
+    </div>
+
+      <br>
+      <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Hours</label>
+        <input type="text" class="form-control" [(ngModel)]="hours" name="hours" id="hours" placeholder="Hours">
+      </div>
+      <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>

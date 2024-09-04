@@ -67,7 +67,8 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ApiDemo:build:production"
+              "buildTarget": "ApiDemo:build:production",
+              "proxyConfig": "src/proxy.conf.json"
             },
             "development": {
               "buildTarget": "ApiDemo:build:development"
